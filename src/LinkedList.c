@@ -52,14 +52,26 @@ int ll_len(LinkedList* this)
 /** \brief  Obtiene un nodo de la lista
  *
  * \param this LinkedList* Puntero a la lista
- * \param index int Indice del nodo a obtener
+ * \param nodeIndex int: Indice del nodo a obtener
  * \return Node* Retorna  (NULL) Error: si el puntero a la lista es NULL o (si el indice es menor a 0 o mayor al len de la lista)
                         (pNode) Si funciono correctamente
  *
  */
 static Node* getNode(LinkedList* this, int nodeIndex)
 {
-    return NULL;
+    int a;
+    Node* node = NULL;
+    if(this != NULL && nodeIndex >= 0 && nodeIndex < ll_len(this))
+    {
+        node = this->pFirstNode;
+        for(a = 0; a < nodeIndex; a++)//cuando nodeindex sea 0 el primer nodo va a sguir siendo el primero que en este caso es null porque la lista esta vacia
+        {
+            node = node->pNextNode;//cuando i!=0 pNode apunta al que sigue hasta que no se pueda iterar mas el ultimo ya se que es null
+
+        }
+    }
+
+    return node;
 }
 
 /** \brief  Permite realizar el test de la funcion getNode la cual es privada
@@ -85,13 +97,34 @@ Node* test_getNode(LinkedList* this, int nodeIndex)
  *                      ( 0) Si funciono correctamente
  *
  */
-static int addNode(LinkedList* this, int nodeIndex,void* pElement)
+static int addNode(LinkedList* this, int nodeIndex, void* pElement)
 {
     int returnAux = -1;
+    Node* newNode;
+    Node* node;
 
-    if(this != NULL && nodeIndex >= 0 && nodeIndex <)
+    if(this != NULL && nodeIndex >= 0 && nodeIndex <= ll_len(this))
     {
+        newNode = (Node*) malloc(sizeof(Node)); //newNode recibe espacion en memoria del tamaño NODE(struct)
+        if(newNode != NULL)
+        {
+            newNode->pElement = pElement;  //Asigna al elemento de newNode la direccion de memoria del elemento pasado por parametro
 
+            if(nodeIndex == 0) //Verifica si nodeIndex (pasado por parametro) es igual a 0
+            {
+                if(this->pFirstNode == NULL)  newNode->pNextNode = NULL;  // verifica si el primer Nodo del parametro THiS(una lista) es igual a NULL y asigna NULL al proximo Nodo de newNode
+                if(this->pFirstNode != NULL)  newNode->pNextNode = this->pFirstNode;
+                this->pFirstNode = newNode;
+            }
+            else
+            {
+                node = getNode(this,nodeIndex-1);
+                newNode->pNextNode = node->pNextNode;
+                node->pNextNode = newNode;
+            }
+            this->size++;
+
+        }
 
         returnAux = 0;
     }

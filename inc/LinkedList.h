@@ -22,12 +22,16 @@ struct Node
 {
     void* pElement;                 //puntero al elemento (persona, empleado, etc.)
     struct Node* pNextNode;         //puntero al prox nodo
+
 }typedef Node;
+
+
 
 struct LinkedList
 {
     Node* pFirstNode;
     int size;                       //cada vez que agrego o elimino un elemento size++/--
+
 }typedef LinkedList;
 #endif
 
