@@ -65,7 +65,7 @@ void utest_printStatistics(char* testName)
 	{
 		int per = (int)(((float)utest_okTestsCounter/(float)utest_totalTestsCounter)*100.0);
         utest_print("**| Total Test  |  Succed Test  |  Failed Test  |  Effectiveness |**\r\n");
-       utest_print4("**|    %3d      |      %3d      |      %3d      |     %3d perc.  |**\r\n",utest_totalTestsCounter,utest_okTestsCounter,(utest_totalTestsCounter-utest_okTestsCounter),per);
+        utest_print4("**|    %3d      |      %3d      |      %3d      |     %3d perc.  |**\r\n",utest_totalTestsCounter,utest_okTestsCounter,(utest_totalTestsCounter-utest_okTestsCounter),per);
 	}
 	else
 		utest_print("No tests executed.\r\n");

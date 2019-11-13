@@ -158,6 +158,15 @@ int ll_add(LinkedList* this, void* pElement)
 {
     int returnAux = -1;
 
+    if(this != NULL)
+    {
+        this->pFirstNode->pElement = pElement;
+        this->size++ ;
+
+        returnAux = 0;
+    }
+
+
     return returnAux;
 }
 
