@@ -10,9 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="decc9e99-e793-493c-bde5-c71586032fcd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LinkedList.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/LinkedList.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bin/Debug/utest.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/bin/Debug/utest.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/obj/Debug/src/LinkedList.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/obj/Debug/src/LinkedList.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/obj/Debug/src/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/obj/Debug/src/main.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utest.depend" beforeDir="false" afterPath="$PROJECT_DIR$/src/utest.depend" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,6 +34,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -55,6 +59,8 @@
       <option name="presentableId" value="Default" />
       <updated>1573597929018</updated>
       <workItem from="1573597930239" duration="1852000" />
+      <workItem from="1573909123406" duration="2580000" />
+      <workItem from="1573940649162" duration="4806000" />
     </task>
     <servers />
   </component>
@@ -66,7 +72,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

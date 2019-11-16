@@ -6,8 +6,8 @@
 
 static Node* getNode(LinkedList* this, int nodeIndex);
 
-
 static int addNode(LinkedList* this, int nodeIndex,void* pElement);
+
 
 /** \brief Crea un nuevo LinkedList en memoria de manera dinamica
  *
@@ -66,7 +66,7 @@ static Node* getNode(LinkedList* this, int nodeIndex)
         node = this->pFirstNode;
         for(a = 0; a < nodeIndex; a++)//cuando nodeindex sea 0 el primer nodo va a sguir siendo el primero que en este caso es null porque la lista esta vacia
         {
-            node = node->pNextNode;//cuando i!=0 pNode apunta al que sigue hasta que no se pueda iterar mas el ultimo ya se que es null
+            node = node->pNextNode;//cuando a!=0 pNode apunta al que sigue hasta que no se pueda iterar mas el ultimo ya se que es null
 
         }
     }
@@ -112,8 +112,15 @@ static int addNode(LinkedList* this, int nodeIndex, void* pElement)
 
             if(nodeIndex == 0) //Verifica si nodeIndex (pasado por parametro) es igual a 0
             {
-                if(this->pFirstNode == NULL)  newNode->pNextNode = NULL;  // verifica si el primer Nodo del parametro THiS(una lista) es igual a NULL y asigna NULL al proximo Nodo de newNode
-                if(this->pFirstNode != NULL)  newNode->pNextNode = this->pFirstNode;
+                if(this->pFirstNode == NULL)
+                {
+                    newNode->pNextNode = NULL;  // Si el primer nodo de la lista pasada por parametro es NULL el siguiente Nodo del newNodo se setea como NULL
+                }
+                else if(this->pFirstNode != NULL)
+                {
+                    newNode->pNextNode = this->pFirstNode; // Si el primer nodo de la lista pasada por parametro es diferente de NULL, el valor que contenga este sera asignado al proximo nodo de newNode
+                }
+
                 this->pFirstNode = newNode;
             }
             else
