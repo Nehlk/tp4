@@ -16,6 +16,7 @@
       <change beforePath="$PROJECT_DIR$/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/obj/Debug/src/LinkedList.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/obj/Debug/src/LinkedList.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/obj/Debug/src/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/obj/Debug/src/main.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utest.depend" beforeDir="false" afterPath="$PROJECT_DIR$/src/utest.depend" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +64,7 @@
       <updated>1573597929018</updated>
       <workItem from="1573597930239" duration="1852000" />
       <workItem from="1573909123406" duration="2580000" />
-      <workItem from="1573940649162" duration="18202000" />
+      <workItem from="1573940649162" duration="21639000" />
     </task>
     <task id="LOCAL-00001" summary="fixed improvement">
       <created>1573947716338</created>
@@ -108,7 +109,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/LinkedList.c</url>
-          <line>380</line>
+          <line>407</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">

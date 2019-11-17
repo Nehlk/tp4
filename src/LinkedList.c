@@ -222,8 +222,8 @@ int ll_set(LinkedList* this, int index, void* pElement)
 
         if(node != NULL)
         {
-           node->pElement = pElement;
-           returnAux = 0;
+            node->pElement = pElement;
+            returnAux = 0;
         }
 
 
@@ -326,7 +326,7 @@ int ll_deleteLinkedList(LinkedList* this)
                         (indice del elemento) Si funciono correctamente
  *
  */
-int ll_indexOf(LinkedList* this, void* pElement)
+int ll_indexOf(LinkedList* this, void* pElement)    //Salio de casualidad, no se que hace..
 {
     int returnAux = -1;
     int a;
@@ -338,8 +338,9 @@ int ll_indexOf(LinkedList* this, void* pElement)
         for (a = 0; a < ll_len(this) ; a++) {
             node = getNode(this, a);
 
-            if(node->pElement != NULL)
+            if(node->pElement == pElement)
                 returnAux = a;
+                break;
         }
     }
 
@@ -358,6 +359,15 @@ int ll_isEmpty(LinkedList* this)
 {
     int returnAux = -1;
 
+    if(this != NULL)
+    {
+        if(ll_len(this) == NULL){
+            returnAux = 1;
+        }else   returnAux = 0;
+
+    }
+
+
     return returnAux;
 }
 
@@ -372,7 +382,24 @@ int ll_isEmpty(LinkedList* this)
  */
 int ll_push(LinkedList* this, int index, void* pElement)
 {
-    int returnAux = -1;
+         int returnAux = -1;                                     //Se agrega un elemento nuevo a la lista, pero en lugar de la ult posicion, se hace en una posicion deseada..
+            Node* node = NULL;                                       // Moviendo asi otro elemento hacia delante o atras
+    Node* previousNode = NULL;
+         Node* newNode = NULL;
+
+    if( this != NULL && index >= 0 && index < ll_len(this) )
+    {
+                node = getNode(this, index );
+        previousNode = getNode(this, index - 1);
+
+
+                newNode->pElement = pElement;
+               newNode->pNextNode = node;
+          previousNode->pNextNode = newNode;
+
+        this->size++;
+        returnAux = 0;
+    }
 
     return returnAux;
 }
