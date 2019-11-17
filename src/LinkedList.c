@@ -110,7 +110,7 @@ static int addNode(LinkedList* this, int nodeIndex, void* pElement)
         {
             newNode->pElement = pElement;  //Asigna al elemento de newNode la direccion de memoria del elemento pasado por parametro
 
-            if(nodeIndex == 0) //Verifica si nodeIndex (pasado por parametro) es igual a 0
+            if(nodeIndex == 0) //Verifica si nodeIndex (pasado por parametro) es igual a 0 (osea el primer nodo, nunca se agrego otro nodo)
             {
                 if(this->pFirstNode == NULL)
                 {
@@ -125,9 +125,9 @@ static int addNode(LinkedList* this, int nodeIndex, void* pElement)
             }
             else
             {
-                node = getNode(this,nodeIndex-1);
-                newNode->pNextNode = node->pNextNode;
-                node->pNextNode = newNode;
+                node = getNode(this, nodeIndex - 1);    //node ahora posee los elementos del nodo anterior al indexado
+                newNode->pNextNode = node->pNextNode;   // el siguiente Nodo de newNode ahora tiene almacenado el siguiente nodo del anterior
+                node->pNextNode = newNode;              //el siguiente nodo de Node ahora es newNode
             }
             this->size++;
 
@@ -188,14 +188,14 @@ int ll_add(LinkedList* this, void* pElement)
 void* ll_get(LinkedList* this, int index)
 {
     void* returnAux = NULL;
-
-    int node;
+    Node* node; //Utilizado para almacenar y devolver la direccion de memoria que conlleva al elemento requerido
 
     if(this != NULL && index >= 0 && index <= ll_len(this))
     {
-        returnAux = getNode(this, index);
+        node = getNode(this, index);
 
-
+        if(node != NULL)
+        returnAux = node->pElement;     //Asigna a la variable return aux el elemento del nodo especificado
     }
 
     return returnAux;
@@ -211,9 +211,24 @@ void* ll_get(LinkedList* this, int index)
                         ( 0) Si funciono correctamente
  *
  */
-int ll_set(LinkedList* this, int index,void* pElement)
+int ll_set(LinkedList* this, int index, void* pElement)
 {
     int returnAux = -1;
+    Node* node;
+
+    if(this != NULL && index >= 0 && index < ll_len(this) )
+    {
+        node = getNode(this, index);
+
+        if(node != NULL)
+        {
+           node->pElement = pElement;
+           returnAux = 0;
+        }
+
+
+    }
+
 
     return returnAux;
 }
@@ -227,9 +242,31 @@ int ll_set(LinkedList* this, int index,void* pElement)
                         ( 0) Si funciono correctamente
  *
  */
-int ll_remove(LinkedList* this,int index)
+int ll_remove(LinkedList* this, int index)
 {
     int returnAux = -1;
+    Node* nodeIndex = NULL;
+    Node* previousNode = NULL;
+
+    if(this != NULL && index >= 0 && index < ll_len(this))
+    {
+       if(index > 0)
+       {
+           nodeIndex = getNode(this, index);
+           previousNode = getNode(this, index - 1);
+           if(nodeIndex != NULL)
+           {
+                   previousNode->pNextNode = nodeIndex->pNextNode; //almaceno el siguiente nodo del nodo actual en el siguiente nodo del nodoAnterior
+           }
+       }
+       else{
+           this->pFirstNode = getNode(this, index + 1 );
+       }
+
+        free(nodeIndex);
+        this->size--;
+        returnAux = 0;
+    }
 
     return returnAux;
 }
@@ -245,6 +282,12 @@ int ll_remove(LinkedList* this,int index)
 int ll_clear(LinkedList* this)
 {
     int returnAux = -1;
+
+    if(this != NULL)
+    {
+        free(this);
+        returnAux = 0;
+    }
 
     return returnAux;
 }
