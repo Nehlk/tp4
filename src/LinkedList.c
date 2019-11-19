@@ -383,21 +383,11 @@ int ll_isEmpty(LinkedList* this)
 int ll_push(LinkedList* this, int index, void* pElement)
 {
          int returnAux = -1;                                     //Se agrega un elemento nuevo a la lista, pero en lugar de la ult posicion, se hace en una posicion deseada..
-            Node* node = NULL;                                       // Moviendo asi otro elemento hacia delante o atras
-    Node* previousNode = NULL;
-         Node* newNode = NULL;
+                                                                    // Moviendo asi otro elemento hacia delante o atras
 
-    if( this != NULL && index >= 0 && index < ll_len(this) )
+    if( this != NULL && index >= 0 && index <= ll_len(this) )
     {
-                node = getNode(this, index );
-        previousNode = getNode(this, index - 1);
-
-
-                newNode->pElement = pElement;
-               newNode->pNextNode = node;
-          previousNode->pNextNode = newNode;
-
-        this->size++;
+        addNode(this, index, pElement);
         returnAux = 0;
     }
 
@@ -413,9 +403,18 @@ int ll_push(LinkedList* this, int index, void* pElement)
                             (pElement) Si funciono correctamente
  *
  */
-void* ll_pop(LinkedList* this,int index)
+void* ll_pop(LinkedList* this, int index)       //dentro de ll_get() se encuenta getNode y se pasa por return la direccion de memoria del pElement del nodo asignado
 {
     void* returnAux = NULL;
+    Node* node;
+
+    if(this != NULL & index >= 0 && index < ll_len(this))
+    {
+        node = ll_get(this, index);
+        returnAux = node;
+
+        ll_remove(this, index);
+    }
 
     return returnAux;
 }
@@ -432,7 +431,23 @@ void* ll_pop(LinkedList* this,int index)
 int ll_contains(LinkedList* this, void* pElement)
 {
     int returnAux = -1;
+    int a;
+    Node* node = NULL;
 
+    if(this != NULL )
+    {
+        for(a = 0; a <= ll_len(this); a++){
+
+            node = getNode(this, a);
+            if( node != NULL && node->pElement == pElement )
+            {
+                returnAux = 1;
+                break;
+            } else{
+                returnAux = 0;
+             }
+        }
+    }
     return returnAux;
 }
 
@@ -445,10 +460,25 @@ int ll_contains(LinkedList* this, void* pElement)
                         ( 1) Si los elementos de (this2) estan contenidos en la lista (this)
                         ( 0) si los elementos de (this2) NO estan contenidos en la lista (this)
 */
-int ll_containsAll(LinkedList* this,LinkedList* this2)
+int ll_containsAll(LinkedList* this, LinkedList* this2)
 {
     int returnAux = -1;
+    int a;
+    void* pElement;         //Recordar que void* se puede usar cuando se necesita un elemento y no se lo tiene..
 
+    if(this != NULL && this2 != NULL)
+    {
+        returnAux = 1;      //por que aca si pongo 0 y en el if lo equivalo a 1 y retornoaux en el if retorno 1 me da error el test?
+        for (a = 0; a < ll_len(this); a++) {
+
+            pElement = ll_get(this2, a);
+            if(ll_contains(this, pElement) == 0)
+            {
+                returnAux = 0;
+                break;
+            }
+        }
+    }
     return returnAux;
 }
 
@@ -462,7 +492,7 @@ int ll_containsAll(LinkedList* this,LinkedList* this2)
                                 o (si el indice to es menor o igual a from o mayor al len de la lista)
                          (puntero a la nueva lista) Si ok
 */
-LinkedList* ll_subList(LinkedList* this,int from,int to)
+LinkedList* ll_subList(LinkedList* this, int from, int to)
 {
     LinkedList* cloneArray = NULL;
 
