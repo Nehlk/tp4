@@ -495,6 +495,19 @@ int ll_containsAll(LinkedList* this, LinkedList* this2)
 LinkedList* ll_subList(LinkedList* this, int from, int to)
 {
     LinkedList* cloneArray = NULL;
+    int a;
+    void* pElement;
+
+    if(this != NULL && from >= 0 && from <= ll_len(this) && to >= from && to <= ll_len(this))
+    {
+        cloneArray = ll_newLinkedList();
+        for(a = from; a <= to; a++)
+        {
+            pElement = ll_get(this, a);
+            ll_add(cloneArray, pElement);
+        }
+
+    }
 
     return cloneArray;
 }
@@ -510,6 +523,18 @@ LinkedList* ll_subList(LinkedList* this, int from, int to)
 LinkedList* ll_clone(LinkedList* this)
 {
     LinkedList* cloneArray = NULL;
+    void* pElement;
+    int a;
+
+    if(this != NULL )
+    {
+        cloneArray = ll_newLinkedList();
+        for(a = 0; a <= ll_len(this); a++)
+        {
+            pElement = ll_get(this, a);
+            ll_add(cloneArray, pElement);
+        }
+    }
 
     return cloneArray;
 }
@@ -524,7 +549,34 @@ LinkedList* ll_clone(LinkedList* this)
  */
 int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
 {
-    int returnAux =-1;
+     int returnAux = -1;
+
+     int a;
+     int cambio;
+     void* pElementA;       //variable para almacenar los elementos de la lista
+     void* pElementB;       //variable para almacenar el siguiente elemento de la lista
+
+    if (this != NULL && (order == 0 || order == 1) && pFunc != NULL)
+    {
+        while(cambio)
+        {
+            cambio = 0;
+            for ( a = 0; a < ll_len(this)  - 1; a++)  //ll_len(this) se le resta 1 para que no explote el pElementB
+            {
+                pElementA = ll_get(this, a);    //el primer elemento de la lista this
+                pElementB = ll_get(this, a + 1);    // el siguiente elemento de la lista list respecto a pElementA
+
+
+                if ( ((pFunc(pElementA,pElementB) > 0) && order == 1) || ((pFunc(pElementA,pElementB) < 0) && order == 0))
+                {                                               // 1 ascendente, 0 descendente
+                    cambio = 1;
+                    ll_set(this, a, pElementB);
+                    ll_set(this, a+1, pElementA);
+                }else continue;
+            }
+        }
+        returnAux = 0;
+    }
 
     return returnAux;
 

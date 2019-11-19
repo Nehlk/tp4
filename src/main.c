@@ -26,9 +26,6 @@
 
 int main(void)
 {
-    LinkedList* nuevaLista = ll_newLinkedList();
-    printf("\n%i\n\n", ll_len(nuevaLista));
-
         startTesting(1);  // ll_newLinkedList
         startTesting(2);  // ll_len
         startTesting(3);  // getNode - test_getNode
@@ -45,7 +42,7 @@ int main(void)
         startTesting(14); // ll_pop
         startTesting(15); // ll_contains
         startTesting(16); // ll_containsAll
-       /* startTesting(17); // ll_subList
+        startTesting(17); // ll_subList
         startTesting(18); // ll_clone
         startTesting(19); // ll_sort */
 
