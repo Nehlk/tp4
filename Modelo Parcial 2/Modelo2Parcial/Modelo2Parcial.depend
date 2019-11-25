@@ -1,0 +1,52 @@
+# depslib dependency file v1.0
+1574630379 source:c:\users\nehl\desktop\modelo parcial 2\modelo2parcial\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1574467822 c:\users\nehl\desktop\modelo parcial 2\modelo2parcial\linkedlist.h
+
+1574469717 source:c:\users\nehl\desktop\modelo parcial 2\modelo2parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"input.h"
+	"LinkedList.h"
+	"FileController.h"
+
+1574469514 source:c:\users\nehl\desktop\modelo parcial 2\modelo2parcial\filecontroller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Vehiculos.h"
+
+1574466607 c:\users\nehl\desktop\modelo parcial 2\modelo2parcial\vehiculos.h
+
+1574466534 source:c:\users\nehl\desktop\modelo parcial 2\modelo2parcial\vehiculos.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"LinkedList.h"
+	"Vehiculos.h"
+	<string.h>
+
+1574433691 source:c:\users\nehl\desktop\modelo parcial 2\modelo2parcial\input.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"validaciones.h"
+
+1574433856 c:\users\nehl\desktop\modelo parcial 2\modelo2parcial\input.h
+
+1574440357 source:c:\users\nehl\desktop\modelo parcial 2\modelo2parcial\validaciones.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"validaciones.h"
+
+1574432328 c:\users\nehl\desktop\modelo parcial 2\modelo2parcial\validaciones.h
+
+1574469629 c:\users\nehl\desktop\modelo parcial 2\modelo2parcial\filecontroller.h
+

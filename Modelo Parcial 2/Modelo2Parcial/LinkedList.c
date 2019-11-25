@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../inc/LinkedList.h"
+#include "LinkedList.h"
 
 
 static Node* getNode(LinkedList* this, int nodeIndex);
@@ -105,7 +105,7 @@ static int addNode(LinkedList* this, int nodeIndex, void* pElement)
 
     if(this != NULL && nodeIndex >= 0 && nodeIndex <= ll_len(this))
     {
-        newNode = (Node*) malloc(sizeof(Node)); //newNode recibe espacion en memoria del tamaño NODE(struct)
+        newNode = (Node*) malloc(sizeof(Node)); //newNode recibe espacion en memoria del tamaï¿½o NODE(struct)
         if(newNode != NULL)
         {
             newNode->pElement = pElement;  //Asigna al elemento de newNode la direccion de memoria del elemento pasado por parametro
@@ -545,7 +545,7 @@ LinkedList* ll_clone(LinkedList* this)
  * \param pFunc (*pFunc) Puntero a la funcion criterio
  * \param order int  [1] Indica orden ascendente - [0] Indica orden descendente
  * \return int Retorna  (-1) Error: si el puntero a la listas es NULL
-                                ( 0) Si ok
+                         (0): Si todo ok
  */
 int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
 {
@@ -581,4 +581,58 @@ int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
     return returnAux;
 
 }
+
+
+/**
+ * @brief mappea los elementos de la lista
+ * @param this
+ * @param pFunc
+ *
+ * @return void.
+ */
+void ll_map(LinkedList* this, void (*pFunc)(void *))
+{
+    int a;
+
+    if(this != NULL && pFunc != NULL)
+    {
+        for (a = 0; a < ll_len(this) ; a++) {
+            pFunc(ll_get(this, a));
+        }
+    }
+}
+
+
+
+
+/**
+ * @brief Filtra elementos de la lista pasada por parametro, y los devuelve en otra lista
+ * @param this
+ * @param pFunc
+ *
+ * @return filterList: Lista con elementos filtrados
+ */
+LinkedList* ll_filter(LinkedList* this, int (*pFunc)(void*))
+{
+     LinkedList* filterList;
+     int a;
+
+     if(this != NULL && pFunc != NULL)
+     {
+         filterList = ll_newLinkedList();
+
+         if(filterList != NULL)
+         {
+             for (a = 0; a < ll_len(this) ; a++)
+             {
+                if(pFunc(ll_get(this, a)))
+                {
+                    ll_add(filterList, ll_get(this, a));
+                }
+             }
+         }
+     }
+     return filterList;
+}
+
 
