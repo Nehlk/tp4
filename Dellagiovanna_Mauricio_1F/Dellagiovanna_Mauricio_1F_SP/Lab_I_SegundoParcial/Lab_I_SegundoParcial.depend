@@ -1,0 +1,86 @@
+# depslib dependency file v1.0
+1574632750 source:c:\users\nehl\desktop\lab_i_segundoparcial\filecontroller.c
+
+1574632805 source:c:\users\nehl\desktop\lab_i_segundoparcial\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1574632806 c:\users\nehl\desktop\lab_i_segundoparcial\linkedlist.h
+
+1514140574 source:c:\users\nehl\desktop\lab_i_segundoparcial\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1574646896 source:c:\users\nehl\desktop\lab_i_segundoparcial\validaciones.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"validaciones.h"
+
+1574646847 c:\users\nehl\desktop\lab_i_segundoparcial\validaciones.h
+
+1574725429 source:d:\dellagiovanna_mauricio_1f\lab_i_segundoparcial\filecontroller.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<ctype.h>
+	<string.h>
+	"LinkedList.h"
+	"Device.h"
+	"Parser.h"
+	"Input.h"
+	"validaciones.h"
+
+1574725671 source:d:\dellagiovanna_mauricio_1f\lab_i_segundoparcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Input.h"
+	"FileController.h"
+
+1574720155 source:d:\dellagiovanna_mauricio_1f\lab_i_segundoparcial\validaciones.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"validaciones.h"
+
+1574720175 d:\dellagiovanna_mauricio_1f\lab_i_segundoparcial\validaciones.h
+
+1574725732 source:d:\dellagiovanna_mauricio_1f\lab_i_segundoparcial\input.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"validaciones.h"
+
+1574710594 source:d:\dellagiovanna_mauricio_1f\lab_i_segundoparcial\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1574632806 d:\dellagiovanna_mauricio_1f\lab_i_segundoparcial\linkedlist.h
+
+1574719667 source:d:\dellagiovanna_mauricio_1f\lab_i_segundoparcial\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Device.h"
+
+1574726051 source:d:\dellagiovanna_mauricio_1f\lab_i_segundoparcial\device.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Device.h"
+	"validaciones.h"
+	"Input.h"
+
+1574723734 d:\dellagiovanna_mauricio_1f\lab_i_segundoparcial\device.h
+
+1574718049 d:\dellagiovanna_mauricio_1f\lab_i_segundoparcial\input.h
+
+1574719674 d:\dellagiovanna_mauricio_1f\lab_i_segundoparcial\parser.h
+
+1574724327 d:\dellagiovanna_mauricio_1f\lab_i_segundoparcial\filecontroller.h
+

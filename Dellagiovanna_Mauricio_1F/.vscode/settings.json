@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "validaciones.h": "c",
+        "clientes.h": "c"
+    }
+}

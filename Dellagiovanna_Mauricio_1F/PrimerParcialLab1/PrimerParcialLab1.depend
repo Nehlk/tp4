@@ -1,0 +1,66 @@
+# depslib dependency file v1.0
+1570572527 source:d:\dellagiovanna_mauricio_1f\primerparciallab1\clientes.c
+	<stdlib.h>
+	<stdio.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	"clientes.h"
+	"validaciones.h"
+	"utn.h"
+
+1570543334 d:\dellagiovanna_mauricio_1f\primerparciallab1\clientes.h
+
+1570485941 d:\dellagiovanna_mauricio_1f\primerparciallab1\validaciones.h
+
+1570573639 source:d:\dellagiovanna_mauricio_1f\primerparciallab1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"clientes.h"
+
+1570548630 source:d:\dellagiovanna_mauricio_1f\primerparciallab1\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
+1570573737 source:d:\dellagiovanna_mauricio_1f\primerparciallab1\validaciones.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"validaciones.h"
+
+1570487017 d:\dellagiovanna_mauricio_1f\primerparciallab1\utn.h
+
+1570501967 source:e:\dellagiovanna_mauricio_1f\primerparciallab1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"clientes.h"
+
+1570543334 e:\dellagiovanna_mauricio_1f\primerparciallab1\clientes.h
+
+1570503375 source:e:\dellagiovanna_mauricio_1f\primerparciallab1\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
+1570487017 e:\dellagiovanna_mauricio_1f\primerparciallab1\utn.h
+
+1570492756 source:e:\dellagiovanna_mauricio_1f\primerparciallab1\validaciones.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"validaciones.h"
+
+1570485941 e:\dellagiovanna_mauricio_1f\primerparciallab1\validaciones.h
+
+1570547188 source:e:\dellagiovanna_mauricio_1f\primerparciallab1\clientes.c
+	<stdlib.h>
+	<stdio.h>
+	<ctype.h>
+	<conio.h>
+	"clientes.h"
+	"validaciones.h"
+	"utn.h"
+
